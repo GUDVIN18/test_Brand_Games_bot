@@ -19,15 +19,13 @@ logging.basicConfig(level=logging.INFO)
 
 # Initialize FSM storage
 memory_storage = MemoryStorage()
-current_connection = None  # None или (admin_id, user_id)
+current_connection = None 
 
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
 bot = Bot(os.getenv('TOKEN'))
-# Initialize bot and dispatcher
-# bot = Bot(token="6974765983:AAFiWlYGZcrz_1o62Vw_RghDRsCe10HB-BU")
 dp = Dispatcher(bot, storage=memory_storage)
 
 start_time = datetime.now().strftime("%Y-%m-%d %H:%M")
